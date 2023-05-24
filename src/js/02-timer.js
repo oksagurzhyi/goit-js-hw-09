@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import 'flatpickr/dist/themes/material_red.css';
@@ -24,7 +25,7 @@ const options = {
     pickedTime = selectedDate - Date.now();
 
     if (pickedTime <= 0) {
-      alert`Please choose a date in the future`;
+      Notiflix.Notify.warning('Please choose a date in the future');
     } else {
       btnStart.disabled = false;
     }
